@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>UI Components - Modal</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>💬 Modal Dialog</h1>
+    <p>Popup overlay for alerts, forms, or messages</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Example Modal</h2>
+      <button class="btn btn-primary" onclick="openModal()">Open Modal</button>
+    </section>
+
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <h3>Welcome!</h3>
+        <p>This is a reusable modal component created using HTML, CSS, and a tiny bit of JavaScript.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p><a href="index.html">⬅ Back to Home</a></p>
+  </footer>
+
+  <script>
+    function openModal() {
+      document.getElementById("modal").style.display = "flex";
+    }
+
+    function closeModal() {
+      document.getElementById("modal").style.display = "none";
+    }
+
+    window.onclick = function (event) {
+      const modal = document.getElementById("modal");
+      if (event.target === modal) {
+        closeModal();
+      }
+    };
+  </script>
+</body>
+</html>
